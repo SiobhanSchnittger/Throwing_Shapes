@@ -1,44 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Throwing Shapes Apparel Home</title>
-<link href="styles.css" rel="stylesheet" type="text/css">
 <!-- link to the stylesheet -->
-<script src="http://widgets.twimg.com/j/2/widget.js"></script><!-- link to the javaScript controlling the twitter widget -->
+<link href="styles.css" rel="stylesheet" type="text/css"></link>
+
+<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script><!-- link to the javaScript controlling the twitter widget -->
 <script type="text/javascript" src="index.js"></script><!-- link to the javaScript controlling the dynamic elements on the index page -->
 <script type="text/javascript" src="products.js"></script><!-- link to the javaScript controlling the products page and parts of the index page slideshow -->
 </head>
 
 <body>
 
-
-<!-- IMPORTANT!!! PLEASE READ!!! A note on layout: All pages have common elements, such as the three column layout, navigation and logo elements. I have written the pseudo-code on the index page only to avoid repetiton  -->
-
+<!-- IMPORTANT!!! PLEASE READ!!! A note on layout: All pages have common elements, such as the three column layout, navigation and logo elements. I have written the pseudo-code on the index page only to avoid repetiton. The following javascript enhancements are as follows: The logo rotation, the banner, the clock and the image zoom gallery. Features integrated are the Twitter Widget, PayPal and PayPal MiniCart --> 
 
 <!-- Header Elements -->
-<div class="header">
-	<!-- login authentication --> 
-  <div class="authenticateForm">
-    <script type="text/javascript">
-<!-- Saving login information using cookies -->
-	var loggedIn = getCookie("isLoggedIn"); <!-- Assign variable loggedIn to getCookie function in the javaScript file--> 
-	if(loggedIn=="true")<!-- if the variable condition is true--> 
-	document.write("Welcome back, " + getCookie("email") + ". Your last visit was " + getCookie("lastLoggedIn")+ 
-	'<a href="index.html" onclick="javascript: logout();"> Logout</a>' 
-	<!-- welcome the user back, and remind them of the date and time of their last visit, hide the login form and replace it with a logout link --> 
-	); 
-	else {
-	document.write('<form name="logInForm" action="index.html" onsubmit="return validateForm();" method="post">' +
-     ' email:' +
-     ' <input type="text" name="email">' +
-     ' password:' +
-     ' <input type="password" name="password">' +
-      '<input type="submit" onclick="" value="Login">' +
-    '</form>'); <!-- Otherwise, return them to the index page--> 
-		}
-</script> 
-  </div>
+<div class="header"> 
+  <!-- login authentication -->
+  <div id="auth" class="authenticateForm"> </div>
 </div>
 
 <!-- The pages are divided into three columns, left, right and content (middle). I have set the width of the left and right columns and allow the browser to calculate the remainder --> 
@@ -47,22 +27,24 @@
 <div class="left-col"> 
   
   <!-- Logo Elements -->
-  <div class="logo"> <a href="index.html"> <img width="200" height="182" alt="Throwing Shapes Logo" src="images/logo.png"></a> </div>
+  <div class="logo"> <a href="index.html"> <img id="logo" width="200" height="182" alt="Throwing Shapes Logo" src="images/logo.png" /></a> </div>
   <!-- Positions the logo in the left column, sets the dimensions of the image, sets the alternative text in the event the image does not render, locates the source of the image file --> 
-  <!-- Social Media Elements -->
-   <!-- twitter icon sourced from http://www.iconfinder.com -->
-   <!-- facebook icon sourced from http://www.iconspedia.com -->
-   <!-- vimeo icon sourced from http://www.iconspedia.com  --> 
+  <!-- Social Media Elements --> 
+  <!-- twitter icon sourced from http://www.iconfinder.com --> 
+  <!-- facebook icon sourced from http://www.iconspedia.com --> 
+  <!-- vimeo icon sourced from http://www.iconspedia.com  -->
   <div class="socialMediaIcons">
     <h2>Find us on...</h2>
-    <a href="https://twitter.com/#!/_ThrowingShapes"><img id="twitter" src="images/twitter.png" alt="twitter Icon"/></a><a href="http://www.facebook.com/throwingshapes"><img id="facebook" src="images/facebook.png" alt="facebook Icon"/></a><a href="http://vimeo.com/throwingshapes"><img id="vimeo" src="images/vimeo.png" alt="Vimeo Icon"/></a></div>
+    <a href="https://twitter.com/#!/_ThrowingShapes"><img id="twitter" src="images/twitter.png" alt="follow us on twitter @_throwingshapes" /></a>
+    <a href="http://www.facebook.com/throwingshapes"><img id="facebook" src="images/facebook.png" alt="like us on facebook www.facebook.com/throwingshapes" /></a>
+    <a href="http://vimeo.com/throwingshapes"><img id="vimeo" src="images/vimeo.png" alt="check out our videos on vimeo! vimeo.com/throwingshapes" /></a></div>
 </div>
 <!-- Right Column -->
 <div class="right-col"> 
   
   <!-- Twitter Feed Elements Code from Twitter's official API https://twitter.com/about/resources/widgets/widget_profile -->
   <div class="twitterFeed"> 
-    <script> <!-- opens a new embedded script -->
+    <script type="text/javascript"> <!-- opens a new embedded script -->
 new TWTR.Widget({  <!-- creates new function TWTR.Widget -->
   version: 2,
   type: 'profile',
@@ -95,35 +77,45 @@ new TWTR.Widget({  <!-- creates new function TWTR.Widget -->
 
 <div class="content-col"> 
   <!-- Slideshow Elements -->
-  <div class ="banner"> 
-    <div class="previousButton"> <a href="#" id="prevLink"><img src="images/dot-back.png" /></a></div><!-- sets up the previous button to move from the current image to the previous one -->
-    <a href="store.html">
+  <div class="banner">
+    <div class="previousButton"> <a href="#" id="prevLink"><img src="images/dot-back.png" alt="Previous button"/></a></div>
+    <!-- sets up the previous button to move from the current image to the previous one --> 
+    
     <div id="productInfo" class="link">
-      <h1>Head</h1>
-      <h2>Price: &#8364;15</h2>
-      <div>Get off your head with this fractal design tee!</div>
-      <h3>more information...</h3><!-- Default product information. The <h1>, <h2> and <div> are referenced in the updateBanner function in the index.js file. This allows the banner to be populated with information from the products.js file about each product, the user can click on the image or information to be directed to the store page--> 
+      <h1><a href="store.html">Head</a></h1>
+      <h2><a href="store.html">Price: &#8364;15</a></h2>
+      <div><a href="store.html">Get off your head with this fractal design tee!</a></div>
+      <h3><a href="store.html">more information...</a></h3>
+      
+      <!-- Default product information. The <h1>, <h2> and <div> are referenced in the updateBanner function in the index.js file. This allows the banner to be populated with information from the products.js file about each product, the user can click on the image or information to be directed to the store page--> 
     </div>
-    <img src="images/headModel.jpg" id="myPicture" alt="Slideshow" /></a><!-- sets the default image -->
-    <div class="nextButton"> <a href="#" id="nextLink"><img src="images/dot-next.png"></a></div><!-- sets up the next button to move from the current image to the next one -->
+    <a href="store.html"><img src="images/headModel.jpg" id="myPicture" alt="Slideshow" /></a><!-- sets the default image -->
+    <div class="nextButton"> <a href="#" id="nextLink"><img src="images/dot-next.png" alt="Next button" /></a></div>
+    <!-- sets up the next button to move from the current image to the next one --> 
   </div>
   
   <!-- Navigation Elements -->
   <div class="navigation">
-    <div><a href="index.html">Home</a></div> <!-- links back to the index page -->
+    <div><a href="index.html">Home</a></div>
+    <!-- links back to the index page --> 
     <span>|</span>
-    <div><a href="store.html">Store</a></div> <!-- links to the store page -->
+    <div><a href="store.html">Store</a></div>
+    <!-- links to the store page --> 
     <span>|</span>
-    <div><a href="gallery.html">Gallery</a></div> <!-- links to the gallery page -->
+    <div><a href="gallery.html">Gallery</a></div>
+    <!-- links to the gallery page --> 
     <span>|</span>
-    <div><a href="faq.html">FAQ</a></div> <!-- links to the FAQ page -->
+    <div><a href="faq.html">FAQ</a></div>
+    <!-- links to the FAQ page --> 
     <span>|</span>
-    <div><a href="contact.html">Contact</a></div> <!-- links to the contact page -->
+    <div><a href="contact.html">Contact</a></div>
+    <!-- links to the contact page --> 
   </div>
   
   <!-- Intro Elements -->
   <div class="introText">
-    <h1>Welcome to Throwing Shapes Apparel</h1><!-- information about the online store -->
+    <h1>Welcome to Throwing Shapes Apparel</h1>
+    <!-- information about the online store -->
     <p>Throwing Shapes are an Irish T Shirt Design Duo. We design T-Shirts to Love in, Sweat in, Laugh in, Party in and Throw Shapes in.</p>
     <p>T-Shirts come in unisex sizes in Small, Medium, Large, XL, and XXL. They are all high quality 100% cotton. Each
       and every design is limited for extra exclusivity, to 25 T-Shirts (in various sizes) so that you know your
@@ -139,5 +131,6 @@ new TWTR.Widget({  <!-- creates new function TWTR.Widget -->
       TS x</p>
   </div>
 </div>
+<script type="text/javascript" src="script.js"></script><!-- link to the javaScript controlling common sitewide scripts -->
 </body>
 </html>

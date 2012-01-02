@@ -2,24 +2,48 @@
 /* CSS Document */
 
 /* Page Elements*/
-
 /* controls the styling for the body tag*/
 body {
 	margin: 0px; /* sets a default of zero to the right, bottom and left margins */
 	margin-top: 10px; /* sets a margin of ten pixels to the top of the body element*/
 	font-family: Arial, Helvetica, sans-serif; /* sets the default fonts for the page*/
+	min-width: 1280px;
+}
+
+/* I have included styling for printer friendly views, the @media print controls the styling of the print view and the @media screen controls the view in the browser*/
+@media print {
+body {
+	min-width: 100%;
+}
 }
 /* controls the styling for anything contained within the header <div>*/
 div.header {
 	height: 30px;
 }
+@media print {
+div.header {
+	display: none;
+}
+}
 /* controls the styling for anything contained within the authenticateForm <div>*/
+@media screen {
+#clock {
+	position: absolute;
+	top: 0px;
+	right: 20px;
+}
 div.authenticateForm {
 	width: 720px; /* sets the width of the container to 720 pixels*/
 	margin-left: auto;
 	margin-right: auto; /* by setting the left and right margins to 'auto' it centres the content*/
 	text-align: right; /*aligns the text to the right of the container*/
 	font-size: .7em; /* sets the font to a size of .7em. I use the 'em' unit of measurement to allow for greater scalability within the browser and on devices*/
+}
+}
+@media print {
+	div.authenticateForm {
+		display:none;
+	}
 }
 .clear {
 	clear: both; /* creates a class to reset any floated elements*/
@@ -36,13 +60,15 @@ a:visited { /* re-styles the links in the document once they have been visited*/
 	text-decoration: none;
 	color: #606;
 }
+@media screen {
 div.left-col { /* controls the styling of anything contained within the left-col <div>, so anything in the left hand column*/
 	width: 200px;
 	float: left;
 }
 div.content-col { /* controls the styling of anything contained within thecontent-col <div>, so anything in the centre column*/
-	margin-left: 210px;
-	margin-right: 210px;
+	margin-left: 200px;
+	margin-right: 275px;
+	min-width: 800px;
 	display: block;
 }
 div.content-col:after { /* after this element apply the following rule*/
@@ -52,9 +78,23 @@ div.right-col {/* controls the styling of anything contained within the right-co
 	width: 275px;
 	float: right;
 }
+}
+ @media print {
+div.left-col { /* controls the styling of anything contained within the left-col <div>, so anything in the left hand column*/
+	display: none;
+}
+div.content-col { /* controls the styling of anything contained within thecontent-col <div>, so anything in the centre column*/
+	width: 100%;
+	display: block;
+}
+div.right-col {/* controls the styling of anything contained within the right-col <div>, so anything in the right hand column*/
+	display:none;
+}
+}
 div.floatL { /* floats a div container left*/
 	float: left;
 }
+ @media screen {
 div.navigation { /* controls the styling of anything contained within the navigation <div>*/
 	margin-left: auto;
 	margin-right: auto;  /* by setting the left and right margins to 'auto' it centres the content*/
@@ -72,6 +112,12 @@ div.navigation span { /* controls the styling of all spans inside the navigation
 div.navigation div {
 	float: left; /* floats all divs contained within the navigation <div> left*/
 }
+}
+@media print {
+div.navigation {
+	display: none;
+}
+}
 div.specialOffer {/* controls the style of the text in the <div> called specialOffer*/
 	color: #F60; /* changes the colour from the default to orange*/
 	font-weight: bold;/* changes the colour from the default weight to bold*/
@@ -84,18 +130,18 @@ div.discount { /* controls the style of the text in the discount <div>*/
 
 /* Twitter Feed*/
 
-	div.twitterFeed {/* controls the style of the <div> container twitterFeed*/
+div.twitterFeed {/* controls the style of the <div> container twitterFeed*/
 	margin-left: 10px;
 	margin-right: 10px;/* adds a margin of 10 pixels to the left and right of the widget*/
 }
 /* Image Elements - styles the images in the document*/	
 
-	img {
+img {
 	border: 0px;
 }
 /* Text Elements styles the text elements in the document*/	
 		
-	h2 { /* controls the syle of all <h2> tags in the document*/
+h2 { /* controls the syle of all <h2> tags in the document*/
 	font-weight: bold;  /*changes from the default font weight to bold*/
 	font-size: 1em;  /* changes the default font size to 1em*/
 }
@@ -106,12 +152,12 @@ h3 {/* controls the syle of all <h3> tags in the document*/
 /*leftCol Elements - controls all of the elements contained within the left hand column*/	
 
 	
-	div.socialMediaIcons { /*styles the social media buttons: twitter, facebook, vimeo*/
-	margin-left: 20px; /*adds 20 pixels tot he left of each icon*/
+div.socialMediaIcons { /*styles the social media buttons: twitter, facebook, vimeo*/
+	margin-left: 10px; /*adds 20 pixels tot he left of each icon*/
 }
 /*Slideshow Elements*/	
 	
-	div.banner { /*controls the styling of anything contained inside the banner <div>*/
+div.banner { /*controls the styling of anything contained inside the banner <div>*/
 	position: relative; /*sets the position of the banner relative to its parent*/
 	margin-left: auto;
 	margin-right: auto; /*centres the banner on the centre column*/
@@ -137,7 +183,7 @@ div.banner div.link { /*controls the styling of the <div> link inside the banner
 }
 /*styles the previous and next buttons */	
  	
-	div.banner div.previousButton {
+div.banner div.previousButton {
 	margin-top: 237px; /*sets the the top margin of the previous button to 237 pixels (half the height of the main image) */
 	float: left;/*floats the arrow image left*/
 	width: 25px;/*sets the width to 25 pixels*/
@@ -147,9 +193,14 @@ div.banner div.nextButton {
 	float: right;/*floats the arrow image right*/
 	width: 25px;/*sets the width to 25 pixels*/
 }
+
+div.banner a{
+	color:	#FFF; /*overrides the default <a> styles and changes the font colour to white*/
+	}
+
 /* Intro Elements*/	
 
-	div.introText {
+div.introText {
 	font-family: Arial, Helvetica, sans-serif; /* sets the font*/
 	font-size: .9em; /* sets the font size to .9em*/
 	margin-left: auto;
@@ -159,14 +210,23 @@ div.banner div.nextButton {
 /* Store Elements - controls the styling for all of the elements on the store page*/	
 
 
-	div.teeShirtIcons {/*styles the <div> container teeShirtIcons*/
+div.teeShirtIcons {/*styles the <div> container teeShirtIcons*/
 	margin-left: 50px; /* sets a the left hand margin to 50 pixels to the edge of the parent container*/
 }
 div.product { /*styles the product images*/
 	float: left; /*floats the images to the left*/
-	width: 200px;/*sets the width of the container to 200 pixels*/
-	margin-top: 150px; /*sets a top margin of 150 pixels*/
+	width: 180px;/*sets the width of the container to 200 pixels*/
 	margin-left: 15px;/* sets a left margin of 15 pixels to seperate each image*/
+}
+@media screen {
+div.product { /*styles the product images*/
+	margin-top: 150px; /*sets a top margin of 150 pixels*/
+}
+}
+@media print {
+div.product { /*styles the product images*/
+	margin-top: 0px; /*sets a top margin of 0 pixels*/
+}
 }
 div.description { /*styles the text of the product description*/
 	width: 160px; /*sets the width of the container to 160 pixels*/
@@ -201,23 +261,39 @@ div.zoomImage { /*controls the styling of larger product images*/
 }
 /*Shopping Carts*/	
 	
-	#addCart {/* styles the add to cart button*/
+#addCart {/* styles the add to cart button*/
 	margin-top: 10px; /*sets the top margin of the button to 10 pixels to give it some space from the rest of the product information*/
 }
+@media screen {
 #PPMiniCart { /*styles the PayPal minicart*/
 	height: 50px;/*sets the overall height of the container*/
 }
+}
+@media print {
+#PPMiniCart { /*styles the PayPal minicart*/
+	display: none !important; /* Hides the cart for printing */
+}
+}
 /* FAQ Elements*/	
-	
-	div.faq {/*styles the FAQ container*/
+@media screen {
+div.faq {/*styles the FAQ container*/
 	float: left; /*floats the faq <div> to the left*/
 	width: 700px; /*sets the overall width of the container*/
 	margin-top: 50px; /*gives the <div> a top margin of 50 pixels*/
 	margin-left: 120px; /*sets the left hand margin to 120 pixels*/
 }
+}
+@media print {
+div.faq {/*styles the FAQ container*/
+	float: left; /*floats the faq <div> to the left*/
+	width: 100%; /*sets the overall width of the container*/
+	margin-top: 0px; /*gives the <div> a top margin of 0 pixels*/
+	margin-left: 0px; /*sets the left hand margin to 0 pixels*/
+}
+}
 /* Contact Elements - controls the elements on the contact page*/
 	
-	div.contactInfo { /*styles the contact information in the right hand column*/
+div.contactInfo { /*styles the contact information in the right hand column*/
 	float: left; /*floats the containter left*/
 	margin-top: 100px; /*sets the top margin to 100 pixels*/
 	width: 300px;/*sets the overall wifth to 300 pixels*/
@@ -276,6 +352,14 @@ div.contactForm form div select { /*sets the styles for any select control*/
 div.contactForm form div textarea { /*controls the styles for the text area within the contactForm <div>*/
 	width: 395px;/* sets the width of the select element to 395 pixels */
 }
+
+div.mailingList{
+	font-size: .9em;/* changes from the default fornt size to .9em */
+	}
+div.mailingList input{
+	width: 25px !important;/* overrides the width specified by the input style so that the mailing list checkbox and submit button align */
+}
+
 /* Gallery Elements - controls the styling of all elements on the gallery page*/
 
 	div.gallery { /*controls the styling of all elements inside the gallery <div>*/

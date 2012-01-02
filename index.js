@@ -50,16 +50,16 @@ function logout(){ // creates function logout
 	};
 
 // Banner
-window.onload = initLinks; //initialises the links as soon as the window loads
+window.onload = init; //initialises the links as soon as the window loads
 
 var thisPic = 0; //sets the vairable thisPic to the default zero
 
 function updateBanner (){ //creates the updateBanner function
 	document.getElementById("myPicture").src = products[thisPic].img; //uses the getElementById object to select a picture by the id "myPicture"
 	var element = document.getElementById("productInfo");//uses the getElementById object to select a picture by the id "productInfo"
-	element.getElementsByTagName("div")[0].textContent=products[thisPic].description;//references a <div> tag in the source code and gets the element in the array with an id of "description", then renders the text in the browser related to that image
-	element.getElementsByTagName("h1")[0].textContent=products[thisPic].name;//references a <h1> tag in the source code and gets the element in the array with an id of "description", then renders the text in the browser related to that image 
-	element.getElementsByTagName("h2")[0].innerHTML='Price: &#8364;' + products[thisPic].price;//references a <h2> tag in the source code and gets the element in the array with an id of "description", then renders the HTML in the browser related to that image 
+	element.getElementsByTagName("div")[0].getElementsByTagName("a")[0].textContent=products[thisPic].description;//references a <div> tag in the source code and gets the element in the array with an id of "description", then renders the text in the browser related to that image
+	element.getElementsByTagName("h1")[0].getElementsByTagName("a")[0].textContent=products[thisPic].name;//references a <h1> tag in the source code and gets the element in the array with an id of "description", then renders the text in the browser related to that image 
+	element.getElementsByTagName("h2")[0].getElementsByTagName("a")[0].innerHTML='Price: &#8364;' + products[thisPic].price;//references a <h2> tag in the source code and gets the element in the array with an id of "description", then renders the HTML in the browser related to that image 
 }
 
 //some code adapted from JavaScript Essential Training at Lynda.com
@@ -85,7 +85,25 @@ function processNext() { //creates the function processNext to update the banner
 	return false; //returns false by default 
 }
 
-function initLinks() {//create function initLinks to initialise the previous and next links 
+function init() {//create function initLinks to initialise javaScript events and login elements 
 	document.getElementById("prevLink").onclick = processPrevious; //gets an element with an id of "prevLink" and calls the function processPrevious when clicked
 	document.getElementById("nextLink").onclick = processNext; //gets an element with an id of "nextLink" and calls the function processNext when clicked
+	
+	<!-- Saving login information using cookies -->
+	var loggedIn = getCookie("isLoggedIn"); <!-- Assign variable loggedIn to getCookie function in the javaScript file--> 
+	if(loggedIn=="true")<!-- if the variable condition is true--> 
+	document.getElementById("auth").innerHTML=("Welcome back, " + getCookie("email") + ". Your last visit was " + getCookie("lastLoggedIn")+ 
+	' <a href="index.html" onclick="javascript: logout();">Logout</a>' 
+	<!-- welcome the user back, and remind them of the date and time of their last visit, hide the login form and replace it with a logout link --> 
+	); 
+	else {
+	document.getElementById("auth").innerHTML=('<form name="logInForm" action="index.html" onsubmit="return validateForm();" method="post">' +
+     ' email:' +
+     ' <input type="text" name="email">' +
+     ' password:' +
+     ' <input type="password" name="password">' +
+      '<input type="submit" onclick="" value="Login">' +
+    '</form>'); <!-- Otherwise, return them to the index page--> 
+		}
 }
+

@@ -53,7 +53,7 @@ function createOption (parent,value,text){
 	parent.appendChild(option);
 	} 
 
-<!-- this function iterates through the known products and generates PayPal friendly forms-->	
+<!-- this function iterates through the known products and generates product info, images and PayPal friendly cart forms-->	
 function loadProducts(){
 	var parent =document.getElementById("products");
 	for (var key in products){
@@ -203,12 +203,12 @@ function loadProducts(){
 			img.style.visibility="visible";
 			img = img.getElementsByTagName("img")[0];
 			img.src=product.imgZoom;
-			};
-		
-		
-		}
-		var overlay = document.getElementById("overlay");
-		overlay.onclick=function(){this.style.visibility="hidden";
+		};
+	}
+	<!-- click event to hide image popup and overlay-->
+	var overlay = document.getElementById("overlay");
+	overlay.onclick=function(){
+		this.style.visibility="hidden";
 		var img = document.getElementById("zoomImage");
 		img.style.visibility="hidden";
 	};

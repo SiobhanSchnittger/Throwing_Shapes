@@ -20,7 +20,7 @@ function storeCookie(name,value) { //create function storeCookie stores a value 
 }
 	
 // Authentication
-function validateForm(){ //creates function validateForm to ensure the user has entered a valid username & password
+function validateForm(){ //creates function validateForm to ensure the user has entered a valid email & password
 	var email=document.forms["logInForm"]["email"].value; //assigns the form object and its values to the variable email
 	var atpos=email.indexOf("@"); //checks to see if there is an 'at' symbol anywhere in the string
 	var dotpos=email.lastIndexOf("."); //checks to see if there is a period anywhere in the string

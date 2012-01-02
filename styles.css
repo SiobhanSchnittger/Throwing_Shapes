@@ -24,7 +24,7 @@ div.authenticateForm{
 	}
 
 .clear {
-	clear: both; /* creating a class to reset any floated elements*/
+	clear: both; /* creates a class to reset any floated elements*/
 	}
 
 a {
@@ -104,12 +104,12 @@ div.discount { /* controls the style of the text in the discount <div>*/
 /* Text Elements styles the text elements in the document*/	
 		
 	h2 { /* controls the syle of all <h2> tags in the document*/	
-		font-weight: bold;  /*changes the default font weight to bold*/	
+		font-weight: bold;  /*changes from the default font weight to bold*/	
 		font-size: 1em;  /* changes the default font size to 1em*/	
 	}
 		
 	h3 {/* controls the syle of all <h3> tags in the document*/
-		font-weight: bold;/*changes the default font weight to bold*/	
+		font-weight: bold;/*changes from the default font weight to bold*/	
 		font-size: .8em;/* changes the default font size to .8em*/	
 	}
 		
@@ -117,255 +117,236 @@ div.discount { /* controls the style of the text in the discount <div>*/
 
 	
 	div.socialMediaIcons { /*styles the social media buttons: twitter, facebook, vimeo*/	
-		margin-left: 20px;
+		margin-left: 20px; /*adds 20 pixels tot he left of each icon*/	
 		}
 
 /*Slideshow Elements*/	
 	
-	div.banner {
-		position: relative;				
-		margin-left: auto;
-		margin-right: auto;
-		width: 780px;
-		height: 480px;
+	div.banner { /*controls the styling of anything contained inside the banner <div>*/	
+		position: relative; /*sets the position of the banner relative to its parent*/					
+		margin-left: auto; 	
+		margin-right: auto; /*centres the banner on the centre column*/
+		width: 780px; 
+		height: 480px; /*sets the height and width of the banner*/
 	}
 	
-	div.banner div.link {
-		position: absolute;	
-		top: 10px; 
-		left: 25px;
-		max-width: 175px;
-		background-color: #999999;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		-khtml-border-radius: 5px;		
-		border-radius: 5px;
-		margin-left: 10px;			
-		padding-left: 10px;
-		float: left;
-		width: 175px;
-		color: #FFFFFF;
-		font-family:Arial, Helvetica, sans-serif;
+	div.banner div.link { /*controls the styling of the <div> link inside the banner <div>. This is the gret box floating inside the image with the product information*/
+		position: absolute;	/*sets the postiion of the box as absolute to the parent*/
+		top: 10px; /*Set the top edge of the box to 10 pixels below the top edge of the containing element*/
+		left: 25px; /*Set the top edge of the box to 25 pixels below the left edge of the containing element*/
+		max-width: 175px;  /*sets the maximum width of the element to 175 pixels*/
+		background-color: #999999;  /*changes the background image to gray*/
+		-moz-border-radius: 5px; /*mozilla standard for border radius - to put a radiused edge of 5 pixels on the object*/
+		-webkit-border-radius: 5px; /*safari standard for border radius - to put a radiused edge of 5 pixels on the object*/
+		-khtml-border-radius: 5px;	/*safari /google chrome standard for border radius - to put a radiused edge of 5 pixels on the object*/	
+		border-radius: 5px;/*IE standard for border radius - to put a radiused edge of 5 pixels on the object*/
+		margin-left: 10px; /*sets the left margin of the box to 10 pixels*/			
+		padding-left: 10px; /*sets a further 10 pixels padding to the left inside the box*/
+		float: left; /*floats the box left*/
+		width: 175px; /*sets the overall width of the box to 175 pixels*/
+		color: #FFFFFF; /*sets the font colour to white*/
+		font-family:Arial, Helvetica, sans-serif; /*sets the font*/
 	}
-	
-	div.banner div.banner-dot {				
-		width: 22px !important;
-		height: 41px !important;
-		float: left;
-		margin-top: 214px;
-	}	
-	
-	div.banner div.banner-dot div {	
-		width: 22px;
-		height: 41px;
-		cursor: pointer;
-		cursor: hand;
-		background-repeat: no-repeat;
-		background-position: left top;		
-	}
-	
-	div.banner div.previousButton { 	
-		margin-top: 237px;
-		float: left;
-		width: 25px;
+
+ /*styles the previous and next buttons */	
+ 	
+	div.banner div.previousButton {
+		margin-top: 237px; /*sets the the top margin of the previous button to 237 pixels (half the height of the main image) */	
+		float: left;/*floats the arrow image left*/
+		width: 25px;/*sets the width to 25 pixels*/
 	}
 
 	div.banner div.nextButton {	
-		margin-top: 237px;
-		float: right;
-		width: 25px;
-		vertical-align:bottom;		
+		margin-top: 237px;/*sets the the top margin of the next button to 237 pixels (half the height of the main image) */
+		float: right;/*floats the arrow image right*/
+		width: 25px;/*sets the width to 25 pixels*/	
 	}
-	
-	div.banner h1 {
-		border: 0px;
-		margin: 0;
-		}
 				
 /* Intro Elements*/	
 
-	div.introText {
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: .9em;
-		margin-left: auto;
-		margin-right: auto;
-		width: 720px;
+	div.introText { 
+		font-family: Arial, Helvetica, sans-serif; /* sets the font*/	
+		font-size: .9em; /* sets the font size to .9em*/	
+		margin-left: auto; 
+		margin-right: auto;/* centres the text inside the container*/	
+		width: 720px; /* sets the overall width to 720 pixels*/	
 	}
 	
-/* Store Elements*/	
+/* Store Elements - controls the styling for all of the elements on the store page*/	
 
-	div.navigation
 
-	div.teeShirtIcons {
-		margin-left: 50px;
+	div.teeShirtIcons {/*styles the <div> container teeShirtIcons*/	
+		margin-left: 50px; /* sets a the left hand margin to 50 pixels to the edge of the parent container*/	
 		}
 	
 	
-	div.product {
-		float: left;
-		width: 200px;
-		margin-top: 150px;
-		margin-left: 15px;
+	div.product { /*styles the product images*/
+		float: left; /*floats the images to the left*/
+		width: 200px;/*sets the width of the container to 200 pixels*/
+		margin-top: 150px; /*sets a top margin of 150 pixels*/
+		margin-left: 15px;/* sets a left margin of 15 pixels to seperate each image*/	
 		
 		}
 
-	div.description {
-		width: 160px;		
+	div.description { /*styles the text of the product description*/
+		width: 160px; /*sets the width of the container to 160 pixels*/
 		}
 		
-	div.selectSize {
-		font-size: .9em;
-		font-weight: bold;
-		margin-top: 5px;		
+	div.selectSize { /*styles the text above the drop down menu to select the t-short size*/
+		font-size: .9em; /*sets font size to .9em*/
+		font-weight: bold; /*changes from the default font weight to bold*/
+		margin-top: 5px; /*gives the container a top margin of 5 pixels*/
 		}
 		
-	div.name {
-		font-size: 1.2em;
-		font-weight: bold;
+	div.name { /*styles the contents of the name <div>*/
+		font-size: 1.2em; /*sets font size to 1.2em*/
+		font-weight: bold; /*changes from the default font weight to bold*/
 		}
+		
 
-	div.overlay {
-		background-color: #000000;
-		left: 0;
-		opacity: 0.6;
-		position: absolute;
-		top: 0;
-		z-index: 100;
+	div.overlay { /*when an image is clicked on, an overlay is applied to overshadow the rest of the page and highlight the larger image (zoomed in view). This conrtols the styling of that overlay*/
+		background-color: #000000; /*sets the background colour to black*/
+		left: 0; /*Set the left edge of the image zero, the very edge of the window*/
+		opacity: 0.6; /*ssets the pacity to 0.6 so the user can still partially see the rest of the images in the background*/
+		position: absolute; /*sets the image of the overlay to absolute <div>*/
+		top: 0; /*Set the top edge of the image zero, the very edge of the window*/
+		z-index: 100; /*Set the z-index to 100 which places on top of items with a lower stack order. By default all objects have the same z-index of auto*/
 		}	
 
-	div.zoomImage {
-		background: none repeat scroll 0 0 #FFFFFF;
-		border: 4px solid #525252;
-		color: #000000;
-		position: absolute;
+	div.zoomImage { /*controls the styling of larger product images*/
+		background: none repeat scroll 0 0 #FFFFFF; /*sets no background on the image*/
+		border: 4px solid #525252; /*sets a gray border of 4 pixels around the image */
+		color: #000000; /*sets the colour to black*/
+		position: absolute; /*sets the images position to absolute*/ 
 		text-align: left;
-		z-index: 102;
-		top: 50%;
-
-		width: 303px;
-		height: 351px;
+		z-index: 102; /*sets the z-index to two above the background in the stack order*/
+		top: 50%; /*sets the top edge of the container to 50% of its parent container*/
+		width: 303px; 
+		height: 351px;/*sets the overall width and height of the container*/
 		}	
 		
-	#addCart {
-		margin-top: 10px;
+/*Shopping Carts*/	
+	
+	#addCart {/* styles the add to cart button*/
+		margin-top: 10px; /*sets the top margin of the button to 10 pixels to give it some space from the rest of the product information*/
 		}
 		
-	#PPMiniCart {
-		height: 50px;
+	#PPMiniCart { /*styles the PayPal minicart*/
+		height: 50px;/*sets the overall height of the container*/
 		}
 	
 	/* FAQ Elements*/	
 	
-	div.faq {
-		float: left;
-		width: 700px;
-		margin-top: 50px;
-		margin-left: 120px; 
+	div.faq {/*styles the FAQ container*/
+		float: left; /*floats the faq <div> to the left*/
+		width: 700px; /*sets the overall width of the container*/
+		margin-top: 50px; /*gives the <div> a top margin of 50 pixels*/
+		margin-left: 120px; /*sets the left hand margin to 120 pixels*/
 		}
 		
 		
-	/* Contact Elements*/
+	/* Contact Elements - controls the elements on the contact page*/
 	
-	div.contactInfo {
-		float: left;
-		margin-top: 100px;
-		width: 300px;
+	div.contactInfo { /*styles the contact information in the right hand column*/
+		float: left; /*floats the containter left*/
+		margin-top: 100px; /*sets the top margin to 100 pixels*/
+		width: 300px;/*sets the overall wifth to 300 pixels*/
 				
 		}
 	
 	
-	div.contactForm {
-		float: left;
-		margin-top: 50px;
-		width: 500px;
-		margin-bottom: 50px;
+	div.contactForm { /*controls the styling for the contact form*/
+		float: left; /*floats the containter left*/
+		margin-top: 50px; /*sets the top margin to 50 pixels*/
+		width: 500px;/*sets the width to 500 pixels*/
+		margin-bottom: 50px; /*sets the bottom margin to 50 pixels*/
 		}
-		
-	div.contactForm div.contactName {
-		
-		}
-		
-	div.contactForm div.contactEmail {
+
+
+
+	div.contactForm div.contactEmail { /*sets the top margin to 20 pixels - puts 20 pixels bewteen each field*/
 		margin-top: 20px;
 		}
 
-	div.contactForm div.contactAddress {
+	div.contactForm div.contactAddress {/*sets the top margin to 20 pixels - puts 20 pixels bewteen each field*/
 		margin-top: 20px;
 		}
 
-	div.contactForm div.contactCounty {
+	div.contactForm div.contactCounty {/*sets the top margin to 20 pixels - puts 20 pixels bewteen each field*/
 		margin-top: 20px;
 		}
-	div.contactForm div.contactCity {
-		margin-top: 20px;
-		}
-		
-	div.contactForm div.contactCountry {
+	div.contactForm div.contactCity {/*sets the top margin to 20 pixels - puts 20 pixels bewteen each field*/
 		margin-top: 20px;
 		}
 		
-	div.contactForm div.enquiryField {
+	div.contactForm div.contactCountry {/*sets the top margin to 20 pixels - puts 20 pixels bewteen each field*/
 		margin-top: 20px;
 		}
 		
-	div.contactForm form {
-		width: 400px;
-		background-color: #999999;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		-khtml-border-radius: 5px;		
-		border-radius: 5px;
-		padding: 15px;		
+	div.contactForm div.enquiryField {/*sets the top margin to 20 pixels - puts 20 pixels bewteen each field*/
+		margin-top: 20px;
+		}
+		
+	div.contactForm form { /*controls the styling for the contact form*/
+		width: 400px; /*sets the width to 400 pixels*/
+		background-color: #999999; /*sets the background colour to grey*/
+		-moz-border-radius: 5px; /*mozilla standard for border radius - to put a radiused edge of 5 pixels on the object*/
+		-webkit-border-radius: 5px; /*safari standard for border radius - to put a radiused edge of 5 pixels on the object*/
+		-khtml-border-radius: 5px;	/*safari /google chrome standard for border radius - to put a radiused edge of 5 pixels on the object*/	
+		border-radius: 5px;/*IE standard for border radius - to put a radiused edge of 5 pixels on the object*/
+		padding: 15px;  /*sets the padding to 15 pixels inside the box*/		
 	}
 		
-	div.contactForm form div input {
-		float: right;
-		width: 150px;
+	div.contactForm form div input { /*styles the input elements*/
+		float: right;  /*floats the input elements right*/
+		width: 150px;  /*sets the width of the input elements to 150 pixels*/
 		}
 
-	div.contactForm form div.submitButton input {
-		float: right;
+	div.contactForm form div.submitButton input {/*styles the input  elements inside the <div> submitButton*/
+		float: right;/*floats the submit button right*/
 		}
-
-	div.contactForm form div.enquiryField:after {
-		clear: both;
+		
+	div.submitButton {/* styles the <div> that contains the submit button */
+		margin-top: 10px; /* adds a top margin of 10 pixels */
+		margin-left: 50px;/* adds a left margin of 50 pixels */
+		}
+		
+	div.contactForm form div.enquiryField:after {/*applies the following styles after the enquiry field <div>*/
+		clear: both; /*creates a class to reset any floated elements */
 	}
 		
-	div.contactForm form div select {
-		float: right;
-		width: 156px;
+	div.contactForm form div select { /*sets the styles for any select control*/
+		float: right; /*floats the select element right  */
+		width: 156px;/* sets the width of the select element to 150 pixels */
 		}
 
-	div.contactForm form div textarea {
-		width: 395px;
+	div.contactForm form div textarea { /*controls the styles for the text area within the contactForm <div>*/
+		width: 395px;/* sets the width of the select element to 395 pixels */
 		}
 				
-	div.submitButton {
-		margin-top: 10px;
-		margin-left: 50px;
-		}
 
-/* Gallery Elements*/
 
-	div.gallery {
-		float: left;
-		margin-top: 50px;
-		margin-left: 100px;
-		margin-right: auto;
+/* Gallery Elements - controls the styling of all elements on the gallery page*/
+
+	div.gallery { /*controls the styling of all elements inside the gallery <div>*/
+		float: left; /*floats the container left*/
+		margin-top: 50px; /*gives the container a top margin of 50 pixels*/
+		margin-left: 100px; /*gives the container a left margin of 50 pixels*/
 		}
 		
-	div.gallery div.galleryImg {
-		float: left;
-		margin-left: 10px;
+	div.gallery div.galleryImg { /*controls the styling of all elements inside the galleryImg <div>*/
+		float: left; /*floats each image to the left*/
+		margin-left: 10px; /*sets a margin left of 10 pixels on each container*/
 		}
 		
-	div.zoomGalleryImage {
-		background: none repeat scroll 0 0 #FFFFFF;
-		border: 4px solid #525252;
-		color: #000000;
-		position: absolute;
-		text-align: left;
-		z-index: 102;
+	div.zoomGalleryImage { /*controls the styling of all elements inside the zoomGalleryImage <div>*/
+		background: none repeat scroll 0 0 #FFFFFF;  /*sets no background on the image*/
+		border: 4px solid #525252; /*sets a gray border of 4 pixels around the image */
+		color: #000000; /*sets the colour to black*/
+		position: absolute; /*sets the images position to absolute*/
+		text-align: left; /*aligns the text description on the "zoomed in" image to the left of the image*/
+		z-index: 102; /*sets the z-index to two above the background in the stack order*/
 		width: 303px;
-		height: 351px;
+		height: 351px;/*sets the overall width and height of the container*/
 		}
+		

@@ -40,15 +40,20 @@
 <!-- Product Elements --> 
 
 <script>
-
-window.onload = loadProducts;
-function createOption (parent,value,text){
-	var option = document.createElement("option");
+<!-- create element creates a new HTML type as specified in the parameter -->
+<!-- .innerHTML sets the HTML value of an element -->
+<!-- .appendChild appends an element as a child to a parent element -->
+<!-- .setAttribute sets the specified attribute to the specified value -->
+window.onload = loadProducts; 
+<!-- creates an option element for a select element -->
+function createOption (parent,value,text){ 
+	var option = document.createElement("option"); 
 	option.setAttribute("value",value);
 	option.innerHTML=text;
 	parent.appendChild(option);
 	} 
-	
+
+<!-- this function iterates through the known products and generates PayPal friendly forms-->	
 function loadProducts(){
 	var parent =document.getElementById("products");
 	for (var key in products){
@@ -181,6 +186,8 @@ function loadProducts(){
 		div.appendChild(p);		
 		parent.appendChild(div);	
 	}
+	
+	<!-- this iterates through the product images and attaches click events to show or hide a larger version as appropriate -->
 	var images=document.getElementsByName("product-img");
 	for(var i=0; i<images.length; i++){
 		var img = images[i];
@@ -205,17 +212,15 @@ function loadProducts(){
 		var img = document.getElementById("zoomImage");
 		img.style.visibility="hidden";
 	};
-			
+	<!-- renders the PayPal MiniCart -->		
 	PAYPAL.apps.MiniCart.render({parent: document.body, paypalURL: 'https://www.paypal.com/ie/cgi-bin/webscr'});
 			
 };
 </script>
-
+<!-- invisible background div to be displayed on the image view click event -->
 <div id="overlay" class="overlay" style="visibility:hidden"></div>
+<!-- invisible div and image element for use on the image view click event  -->
 <div id="zoomImage" class="zoomImage" style="visibility:hidden"><img src="" /></div>
 
-<script type="text/javascript">
-
-    </script>
 </body>
 </html>

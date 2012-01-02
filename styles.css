@@ -1,0 +1,371 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Page Elements*/
+
+/* controls the styling for the body tag*/
+body {
+	margin: 0px; /* sets a default of zero to the right, bottom and left margins */
+	margin-top: 10px; /* sets a margin of ten pixels to the top of the body element*/
+	font-family: Arial, Helvetica, sans-serif; /* sets the default fonts for the page*/
+}
+
+/* controls the styling for anything contained within the header <div>*/
+div.header {
+	height: 30px;
+}
+/* controls the styling for anything contained within the authenticateForm <div>*/
+div.authenticateForm{ 
+	width: 720px; /* sets the width of the container to 720 pixels*/
+	margin-left: auto; 
+	margin-right: auto; /* by setting the left and right margins to 'auto' it centres the content*/
+	text-align: right; /*aligns the text to the right of the container*/
+	font-size: .7em; /* sets the font to a size of .7em. I use the 'em' unit of measurement to allow for greater scalability within the browser and on devices*/
+	}
+
+.clear {
+	clear: both; /* creating a class to reset any floated elements*/
+	}
+
+a {
+	text-decoration: none; /* re-styles the links in the document*/
+	color: #000;
+}
+a:hover { /* re-styles the links in the document when the cursor is hovering over them*/
+	text-decoration: none;
+	color: #F60;
+}
+a:visited { /* re-styles the links in the document once they have been visited*/
+	text-decoration: none;
+	color: #606;
+}
+div.left-col { /* controls the styling of anything contained within the left-col <div>, so anything in the left hand column*/
+	width: 200px;
+	float: left;
+}
+div.content-col { /* controls the styling of anything contained within thecontent-col <div>, so anything in the centre column*/
+	margin-left: 210px;
+	margin-right: 210px;
+	display: block;
+}
+div.content-col:after { /* after this element apply the following rule*/
+	clear:both;
+}
+div.right-col {/* controls the styling of anything contained within the right-col <div>, so anything in the right hand column*/
+	width: 275px;
+	float: right;
+}
+div.floatL { /* floats a div container left*/
+	float: left;
+}
+div.navigation { /* controls the styling of anything contained within the navigation <div>*/
+	margin-left: auto;
+	margin-right: auto;  /* by setting the left and right margins to 'auto' it centres the content*/
+	margin-bottom: 10px; /* allows for 10 pixels at the bottom of the navigation container*/
+	width: 700px;  /*sets the navigation container to 700 pixels*/
+	height: 10px;  /* gives the navigation container a width of 10 pixels*/
+	font-weight: bold;  /* overrides the default font weight and makes the text in the navigation bold*/
+	font-size: .9em; /* sets the font to a size of .9em. I use the 'em' unit of measurement to allow for greater scalability within the browser and on devices*/
+}
+div.navigation span { /* controls the styling of all spans inside the navigation <div>*/
+	padding-left: 20px; 
+	padding-right: 20px; 
+	float: left;/* adds 20 pixels padding to the left and right of the bar seperating navigation links and has the dividers float left*/
+}
+div.navigation div {
+	float: left; /* floats all divs contained within the navigation <div> left*/
+}
+
+div.specialOffer {/* controls the style of the text in the <div> called specialOffer*/
+	color: #F60; /* changes the colour from the default to orange*/
+	font-weight: bold;/* changes the colour from the default weight to bold*/
+	}
+	
+div.discount { /* controls the style of the text in the discount <div>*/
+	color: #F60;/* changes the colour from the default to orange*/
+	font-weight: bold;/* changes the colour from the default weight to bold*/
+	}
+
+	
+/* Sidebar Elements*/
+
+/* Twitter Feed*/
+
+	div.twitterFeed {/* controls the style of the <div> container twitterFeed*/
+		margin-left: 10px; 
+		margin-right: 10px;/* adds a margin of 10 pixels to the left and right of the widget*/
+	}
+	
+/* Image Elements - styles the images in the document*/	
+
+	img {
+		border: 0px; 
+	}
+/* Text Elements styles the text elements in the document*/	
+		
+	h2 { /* controls the syle of all <h2> tags in the document*/	
+		font-weight: bold;  /*changes the default font weight to bold*/	
+		font-size: 1em;  /* changes the default font size to 1em*/	
+	}
+		
+	h3 {/* controls the syle of all <h3> tags in the document*/
+		font-weight: bold;/*changes the default font weight to bold*/	
+		font-size: .8em;/* changes the default font size to .8em*/	
+	}
+		
+/*leftCol Elements - controls all of the elements contained within the left hand column*/	
+
+	
+	div.socialMediaIcons { /*styles the social media buttons: twitter, facebook, vimeo*/	
+		margin-left: 20px;
+		}
+
+/*Slideshow Elements*/	
+	
+	div.banner {
+		position: relative;				
+		margin-left: auto;
+		margin-right: auto;
+		width: 780px;
+		height: 480px;
+	}
+	
+	div.banner div.link {
+		position: absolute;	
+		top: 10px; 
+		left: 25px;
+		max-width: 175px;
+		background-color: #999999;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;		
+		border-radius: 5px;
+		margin-left: 10px;			
+		padding-left: 10px;
+		float: left;
+		width: 175px;
+		color: #FFFFFF;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	div.banner div.banner-dot {				
+		width: 22px !important;
+		height: 41px !important;
+		float: left;
+		margin-top: 214px;
+	}	
+	
+	div.banner div.banner-dot div {	
+		width: 22px;
+		height: 41px;
+		cursor: pointer;
+		cursor: hand;
+		background-repeat: no-repeat;
+		background-position: left top;		
+	}
+	
+	div.banner div.previousButton { 	
+		margin-top: 237px;
+		float: left;
+		width: 25px;
+	}
+
+	div.banner div.nextButton {	
+		margin-top: 237px;
+		float: right;
+		width: 25px;
+		vertical-align:bottom;		
+	}
+	
+	div.banner h1 {
+		border: 0px;
+		margin: 0;
+		}
+				
+/* Intro Elements*/	
+
+	div.introText {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: .9em;
+		margin-left: auto;
+		margin-right: auto;
+		width: 720px;
+	}
+	
+/* Store Elements*/	
+
+	div.navigation
+
+	div.teeShirtIcons {
+		margin-left: 50px;
+		}
+	
+	
+	div.product {
+		float: left;
+		width: 200px;
+		margin-top: 150px;
+		margin-left: 15px;
+		
+		}
+
+	div.description {
+		width: 160px;		
+		}
+		
+	div.selectSize {
+		font-size: .9em;
+		font-weight: bold;
+		margin-top: 5px;		
+		}
+		
+	div.name {
+		font-size: 1.2em;
+		font-weight: bold;
+		}
+
+	div.overlay {
+		background-color: #000000;
+		left: 0;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		z-index: 100;
+		}	
+
+	div.zoomImage {
+		background: none repeat scroll 0 0 #FFFFFF;
+		border: 4px solid #525252;
+		color: #000000;
+		position: absolute;
+		text-align: left;
+		z-index: 102;
+		top: 50%;
+
+		width: 303px;
+		height: 351px;
+		}	
+		
+	#addCart {
+		margin-top: 10px;
+		}
+		
+	#PPMiniCart {
+		height: 50px;
+		}
+	
+	/* FAQ Elements*/	
+	
+	div.faq {
+		float: left;
+		width: 700px;
+		margin-top: 50px;
+		margin-left: 120px; 
+		}
+		
+		
+	/* Contact Elements*/
+	
+	div.contactInfo {
+		float: left;
+		margin-top: 100px;
+		width: 300px;
+				
+		}
+	
+	
+	div.contactForm {
+		float: left;
+		margin-top: 50px;
+		width: 500px;
+		margin-bottom: 50px;
+		}
+		
+	div.contactForm div.contactName {
+		
+		}
+		
+	div.contactForm div.contactEmail {
+		margin-top: 20px;
+		}
+
+	div.contactForm div.contactAddress {
+		margin-top: 20px;
+		}
+
+	div.contactForm div.contactCounty {
+		margin-top: 20px;
+		}
+	div.contactForm div.contactCity {
+		margin-top: 20px;
+		}
+		
+	div.contactForm div.contactCountry {
+		margin-top: 20px;
+		}
+		
+	div.contactForm div.enquiryField {
+		margin-top: 20px;
+		}
+		
+	div.contactForm form {
+		width: 400px;
+		background-color: #999999;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;		
+		border-radius: 5px;
+		padding: 15px;		
+	}
+		
+	div.contactForm form div input {
+		float: right;
+		width: 150px;
+		}
+
+	div.contactForm form div.submitButton input {
+		float: right;
+		}
+
+	div.contactForm form div.enquiryField:after {
+		clear: both;
+	}
+		
+	div.contactForm form div select {
+		float: right;
+		width: 156px;
+		}
+
+	div.contactForm form div textarea {
+		width: 395px;
+		}
+				
+	div.submitButton {
+		margin-top: 10px;
+		margin-left: 50px;
+		}
+
+/* Gallery Elements*/
+
+	div.gallery {
+		float: left;
+		margin-top: 50px;
+		margin-left: 100px;
+		margin-right: auto;
+		}
+		
+	div.gallery div.galleryImg {
+		float: left;
+		margin-left: 10px;
+		}
+		
+	div.zoomGalleryImage {
+		background: none repeat scroll 0 0 #FFFFFF;
+		border: 4px solid #525252;
+		color: #000000;
+		position: absolute;
+		text-align: left;
+		z-index: 102;
+		width: 303px;
+		height: 351px;
+		}

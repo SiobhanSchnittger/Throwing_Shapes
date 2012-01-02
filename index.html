@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Throwing Shapes Apparel Home</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<!-- link to the stylesheet -->
+<script src="http://widgets.twimg.com/j/2/widget.js"></script><!-- link to the javaScript controlling the twitter widget -->
+<script type="text/javascript" src="index.js"></script><!-- link to the javaScript controlling the dynamic elements on the index page -->
+<script type="text/javascript" src="products.js"></script><!-- link to the javaScript controlling the products page and parts of the index page slideshow -->
+</head>
+
+<body>
+
+<!-- Header Elements -->
+<div class="header">
+	<!-- login authentication --> 
+  <div class="authenticateForm">
+    <script type="text/javascript">
+<!-- Saving login information using cookies -->
+	var loggedIn = getCookie("isLoggedIn"); <!-- Assign variable loggedIn to getCookie function in the javaScript file--> 
+	if(loggedIn=="true")<!-- if the variable condition is true--> 
+	document.write("Welcome back, " + getCookie("email") + ". Your last visit was " + getCookie("lastLoggedIn")+ 
+	'<a href="index.html" onclick="javascript: logout();"> Logout</a>' 
+	<!-- welcome the user back, and remind them of the date and time of their last visit, hide the login form and replace it with a logout link --> 
+	); 
+	else {
+	document.write('<form name="logInForm" action="index.html" onsubmit="return validateForm();" method="post">' +
+     ' email:' +
+     ' <input type="text" name="email">' +
+     ' password:' +
+     ' <input type="password" name="password">' +
+      '<input type="submit" onclick="" value="Login">' +
+    '</form>'); <!-- Otherwise, return them to the index page--> 
+		}
+</script> 
+  </div>
+</div>
+
+<!-- The pages are divided into three columns, left, right and content (middle). I have set the width of the left and right columns and allow the browser to calculate the remainder --> 
+
+<!-- Left Column -->
+<div class="left-col"> 
+  
+  <!-- Logo Elements -->
+  <div class="logo"> <a href="index.html"> <img width="200" height="182" alt="Throwing Shapes Logo" src="images/logo.png"></a> </div>
+  <!-- Positions the logo in the left column, sets the dimensions of the image, sets the alternative text in the event the image does not render, locates the source of the image file --> 
+  <!-- Social Media Elements -->
+  
+  <div class="socialMediaIcons">
+    <h2>Find us on...</h2>
+    <a href="https://twitter.com/#!/_ThrowingShapes"><img id="twitter" src="images/twitter.png" alt="twitter Icon"/></a><a href="http://www.facebook.com/throwingshapes"><img id="facebook" src="images/facebook.png" alt="facebook Icon"/></a><a href="http://vimeo.com/throwingshapes"><img id="vimeo" src="images/vimeo.png" alt="Vimeo Icon"/></a></div>
+</div>
+<!-- Right Column -->
+<div class="right-col"> 
+  
+  <!-- Twitter Feed Elements Code from Twitter's official API https://twitter.com/about/resources/widgets/widget_profile -->
+  <div class="twitterFeed"> 
+    <script> <!-- opens a new embedded script -->
+new TWTR.Widget({  <!-- creates new function TWTR.Widget -->
+  version: 2,
+  type: 'profile',
+  rpp: 5, <!-- tells the widget to display 5 tweets -->
+  interval: 30000, 
+  height: 478, <!-- sets the height of the widget -->
+  theme: { <!-- controls the style elements of the widget -->
+    shell: {
+      background: '#666666',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#666666',
+      color: '#ffffff',
+      links: '#FF6633'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('_throwingshapes').start(); <!-- renders the view and sets the user account to be displayed -->
+</script> 
+  </div>
+</div>
+
+<!-- Centre / Content Column -->
+
+<div class="content-col"> 
+  <!-- Slideshow Elements -->
+  <div class ="banner"> 
+    <div class="previousButton"> <a href="#" id="prevLink"><img src="images/dot-back.png" /></a></div><!-- sets up the previous button to move from the current image to the previous one -->
+    <a href="store.html">
+    <div id="productInfo" class="link">
+      <h1>Head</h1>
+      <h2>Price: &#8364;15</h2>
+      <div>Get off your head with this fractal design tee!</div>
+      <h3>more information...</h3><!-- Default product information. The <h1>, <h2> and <div> are referenced in the updateBanner function inthe index.js file. This allows the banner to be populated with information from the products.js file about each product, the user can click on the image or information to be directed to the store page--> 
+    </div>
+    <img src="images/headModel.jpg" id="myPicture" alt="Slideshow" /></a><!-- sets the default image -->
+    <div class="nextButton"> <a href="#" id="nextLink"><img src="images/dot-next.png"></a></div><!-- sets up the next button to move from the current image to the next one -->
+  </div>
+  
+  <!-- Navigation Elements -->
+  <div class="navigation">
+    <div><a href="index.html">Home</a></div> <!-- links back to the index page -->
+    <span>|</span>
+    <div><a href="store.html">Store</a></div> <!-- links to the store page -->
+    <span>|</span>
+    <div><a href="gallery.html">Gallery</a></div> <!-- links to the gallery page -->
+    <span>|</span>
+    <div><a href="faq.html">FAQ</a></div> <!-- links to the FAQ page -->
+    <span>|</span>
+    <div><a href="contact.html">Contact</a></div> <!-- links to the contact page -->
+  </div>
+  
+  <!-- Intro Elements -->
+  <div class="introText">
+    <h1>Welcome to Throwing Shapes Apparel</h1><!-- information about the online store -->
+    <p>Throwing Shapes are an Irish T Shirt Design Duo. We design T-Shirts to Love in, Sweat in, Laugh in, Party in and Throw Shapes in.</p>
+    <p>T-Shirts come in unisex sizes in Small, Medium, Large, XL, and XXL. They are all high quality 100% cotton. Each
+      and every design is limited for extra exclusivity, to 25 T-Shirts (in various sizes) so that you know your
+      T-Shirt is special. We want our T Shirts to be worn by people who know how to live life to the full, giggle uncontrollably, love
+      strangers, and dance until they fall over.</p>
+    <div class="specialOffer">
+      <p>And because WE love YOU (oh yes we do) we are offering you 20% off for the entire month of January (while stocks
+        last)</p>
+    </div>
+    <p>Plus, we want to share our passion for Life and for Dancing with all of you, so check out our videos and blog for
+      music news, interviews with top DJs and exclusive competitions.</p>
+    <p>Love<br />
+      TS x</p>
+  </div>
+</div>
+</body>
+</html>
